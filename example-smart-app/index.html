@@ -54,8 +54,8 @@
 				response.forEach(function(patientObj,idx){
 					patientString += 
 						"<tr>"+
-							"<td>"+patientObj.name[0].text+"</td>"+
-							"<td>"+patientObj.birthDate+"</td>"+
+							"<td>"+"Name: "+patientObj.name[0].text+"</td>"+
+							"<td>"+"DOB: "+patientObj.birthDate+"</td>"+
 						"</tr>";
 				});
 				patientString += "</table>";
