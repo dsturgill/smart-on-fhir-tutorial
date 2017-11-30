@@ -71,6 +71,7 @@
 				retString += "</table>";
 				document.getElementById("allergyDiv").innerHTML = retString;
 			});
+			/*
 			var lookbackDate = new Date();
 			lookbackDate.setMonth(lookbackDate.getMonth()-6);
 			var month = (lookbackDate.getMonth()+1 < 10)?"0"+(lookbackDate.getMonth()+1):lookbackDate.getMonth()+1;
@@ -88,10 +89,10 @@
 				}
 							
 			}).then(function(response) {
-				/*
-				document.getElementById("obvDiv").innerText = JSON.stringify(response);
-				return;
-				*/
+				
+				//document.getElementById("obvDiv").innerText = JSON.stringify(response);
+				//return;
+				
 				var retString = "<table class='dataTable'>";
 				response.forEach(function(obvObj,idx){
 					if (typeof obvObj.valueQuantity === "object") {
@@ -106,6 +107,7 @@
 				retString += "</table>";
 				document.getElementById("obvDiv").innerHTML = retString;
 			});
+			*/
 		}
 	}
 	function notReady() {
