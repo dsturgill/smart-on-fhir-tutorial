@@ -46,6 +46,7 @@
 				retString += "</table>";
 				document.getElementById("medStatementDiv").innerHTML = retString;
 			});
+			/*
 			patientApi.fetchAll({type:'Device'}).then(function(response) {
 				var retStringdevice = "<table class='dataTable'>";
 				response.forEach(function(devObj,idx){
@@ -71,7 +72,7 @@
 				retString += "</table>";
 				document.getElementById("allergyDiv").innerHTML = retString;
 			});
-			/*
+			
 			var lookbackDate = new Date();
 			lookbackDate.setMonth(lookbackDate.getMonth()-6);
 			var month = (lookbackDate.getMonth()+1 < 10)?"0"+(lookbackDate.getMonth()+1):lookbackDate.getMonth()+1;
