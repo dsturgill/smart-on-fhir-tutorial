@@ -43,8 +43,7 @@
 			patientApi.fetchAll({type: 'MedicationStatement'}).then(function(response) {
 				var retString = "<table class='dataTable'>";
 				response.forEach(function(medObj,idx){
-					retString += "<tr><td>"+"Medication"+"</td></tr>";
-					retString += "<tr><td>"+medObj.medicationCodeableConcept.text+"</td></tr>";
+				retString += "<tr><td>"+medObj.medicationCodeableConcept.text+"</td></tr>";
 				});
 				retString += "</table>";
 				document.getElementById("medStatementDiv").innerHTML = retString;
