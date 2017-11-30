@@ -57,7 +57,7 @@
 				});
 				retStringdevice += "</table>";
 				document.getElementById("devDiv").innerHTML = retStringdevice;	
-			
+			});
 			
 			patientApi.fetchAll({type:'AllergyIntolerance',query:{status:'active'}}).then(function(response) {
 				var retString = "<table class='dataTable'>";
