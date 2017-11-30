@@ -46,7 +46,7 @@
 				retString += "</table>";
 				document.getElementById("medStatementDiv").innerHTML = retString;
 			});
-			patientApi.fetchAll({type:'Device',query:{status:'active'}}).then(function(response) {
+			patientApi.fetchAll({type:'Device'}}).then(function(response) {
 				var retStringdevice = "<table class='dataTable'>";
 				response.forEach(function(devObj,idx){
 					retStringdevice += 
