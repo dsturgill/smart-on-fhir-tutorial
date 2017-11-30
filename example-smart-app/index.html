@@ -51,7 +51,7 @@
 			
 			patientApi.fetchAll({type:'Patient'}).then(function(response) {
 				var patientString = "<table class='dataTable'>";
-				response.forEach(function(allObj,idx){
+				response.forEach(function(patientObj,idx){
 					patientString += 
 						"<tr>"+
 							"<td>"+patientObj.name+"</td>"+
