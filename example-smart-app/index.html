@@ -8,6 +8,7 @@
 		.dataTable {width:100%;table-layout:fixed;border-collapse:collapse;}
 		.dataTable td {box-sizing:border-box;border-bottom:1px solid #000;width:100%;}	
 		.dataDiv {width:100%;margin-bottom:6px;border:1px solid #000;}
+		
 	</style>
 	<link rel='stylesheet' type='text/css' href='./src/css/example-smart-app.css'>
 	<link rel='stylesheet' type='text/css' href='./lib/css/cerner-smart-embeddable-lib-1.0.0.min.css'>
@@ -16,6 +17,8 @@
 		<div id="medStatementDiv" class="dataDiv">Loading meds...</div>
 		<div id="allergyDiv" class="dataDiv">Loading allergies...</div>
 		<div id="obvDiv" class="dataDiv">Loading observations...</div>
+		<div id="devDiv" class="devDiv">Loading devices...</div>
+		
 	</body>
 	<!-- Required JS files to enable this page to embed within an MPage -->
 	<script src='https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/6.26.0/polyfill.min.js'></script>
@@ -43,6 +46,19 @@
 				retString += "</table>";
 				document.getElementById("medStatementDiv").innerHTML = retString;
 			});
+			patientApi.fetchAll({type:'Device',query:{status:'active'}}).then(function(response) {
+				var retString = "<table class='dataTable'>";
+				response.forEach(function(devObj,idx){
+					retString += 
+						"<tr>"+
+							"<td>"+devObj.model+"</td>"+
+							"<td>"+devObj.manufacturedate+"</td>"+
+						"</tr>";
+				});
+				retString += "</table>";
+				document.getElementById("devDiv").innerHTML = retString;	
+			
+			
 			patientApi.fetchAll({type:'AllergyIntolerance',query:{status:'active'}}).then(function(response) {
 				var retString = "<table class='dataTable'>";
 				response.forEach(function(allObj,idx){
@@ -70,6 +86,9 @@
 					},
 					date: curDateStr
 				}
+							patientApi.fetchAll({
+				type: 'Observation',
+
 			}).then(function(response) {
 				/*
 				document.getElementById("obvDiv").innerText = JSON.stringify(response);
